@@ -1,0 +1,1944 @@
+/* ========================================
+    project.css - merged styles for project pages
+    ======================================== */
+
+
+
+.projects-page {
+    background: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+}
+
+body.admin-projects-page,
+body.admin-approve-projects-page {
+    background: #F7ECDE;
+}
+
+/* ======== Foundation Own View ======== */
+.foundation-view-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 24px 56px;
+}
+
+.foundation-view-head {
+    margin-bottom: 18px;
+}
+
+.foundation-view-head h1 {
+    margin: 0;
+    font-size: 38px;
+    font-family: 'Prompt', sans-serif;
+    color: #2e3f7f;
+}
+
+.foundation-view-head p {
+    margin: 6px 0 14px;
+    color: #5b6470;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.foundation-view-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.foundation-view-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.foundation-manage-btn {
+    border: 0;
+    border-radius: 10px;
+    font-weight: 800;
+    padding: 9px 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.foundation-manage-btn-primary {
+    background: #3C5099;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.05rem;
+}
+
+/* เหมือน .btn-toggle-edit หน้าเด็ก (แก้ไขโปรไฟล์) — มุมโค้ง 10px ไม่ใช่เม็ดยา */
+.foundation-manage-btn-edit {
+    border-radius: 10px !important;
+    background: #F1CF54;
+    color: #1f2937;
+    padding: 12px 20px;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+    border: none !important;
+    box-shadow: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+.foundation-manage-btn-danger {
+    background: #CC583F;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.05rem;
+    border: none !important;
+    box-shadow: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.foundation-manage-btn-edit:hover,
+.foundation-manage-btn-edit:active,
+.foundation-manage-btn-edit:focus {
+    background: #e8c94a !important;
+    color: #1f2937 !important;
+    filter: none !important;
+    box-shadow: none;
+}
+
+.foundation-manage-btn-danger:hover,
+.foundation-manage-btn-danger:active,
+.foundation-manage-btn-danger:focus {
+    background: #CC583F !important;
+    color: #fff !important;
+    filter: none !important;
+    box-shadow: none;
+}
+
+/* แก้ไขโครงการ (การ์ด) — รูปทรงเดียวกับปุ่มแก้ไขโปรไฟล์แถบบน (.btn-toggle-edit) */
+.foundation-project-pill-edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #F1CF54;
+    color: #1f2937;
+    font-weight: 800;
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    box-shadow: none;
+    margin-top: 8px;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+    box-sizing: border-box;
+    transition: background 0.15s ease;
+}
+
+.foundation-project-pill-edit:hover,
+.foundation-project-pill-edit:active,
+.foundation-project-pill-edit:focus {
+    background: #e8c94a;
+    color: #1f2937;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ยืนยันลบ / ยกเลิก — การ์ด */
+.foundation-delete-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.foundation-pill-confirm-delete {
+    background: #CC583F;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 11px 26px;
+    font-weight: 800;
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(204, 88, 63, 0.35);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: none;
+}
+
+.foundation-pill-confirm-delete:hover,
+.foundation-pill-confirm-delete:active,
+.foundation-pill-confirm-delete:focus {
+    background: #CC583F !important;
+    color: #fff !important;
+    filter: none !important;
+    box-shadow: 0 4px 14px rgba(204, 88, 63, 0.35);
+    transform: none;
+}
+
+.foundation-pill-cancel-delete {
+    background: #CC583F;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 11px 26px;
+    font-weight: 800;
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(204, 88, 63, 0.35);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: background 0.15s ease, transform 0.160s ease;
+}
+
+.foundation-pill-cancel-delete:hover,
+.foundation-pill-cancel-delete:active,
+.foundation-pill-cancel-delete:focus {
+    background: #CC583F;
+    transform: none;
+}
+
+.foundation-manage-btn-merge {
+    background: #5b7c9e;
+    color: #fff;
+    padding: 10px 16px;
+    font-size: 0.98rem;
+    border: none;
+    border-radius: 999px;
+    box-shadow: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.foundation-merge-hint {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: #eef4ff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+}
+
+.foundation-merge-note {
+    font-size: 0.88rem;
+    color: #3d4a60;
+    font-family: 'Sarabun', sans-serif;
+    line-height: 1.45;
+}
+
+.foundation-manage-btn-donor {
+    background: #597D57;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    font-weight: 800;
+    padding: 9px 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.foundation-warn {
+    display: inline-block;
+    margin-right: 10px;
+    color: #b7791f;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 14px;
+}
+
+.foundation-project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.foundation-project-item {
+    display: flex;
+    gap: 16px;
+    background: #f4f6fb;
+    border-radius: 12px;
+    padding: 14px;
+    border-left: 4px solid #cbd5e7;
+}
+
+.foundation-project-item.st-approved { border-left-color: #4CAF50; }
+.foundation-project-item.st-pending { border-left-color: #f6c243; }
+.foundation-project-item.st-completed { border-left-color: #3C5099; }
+.foundation-project-item.st-purchasing { border-left-color: #ca8a04; }
+.foundation-project-item.st-rejected { border-left-color: #d66565; }
+
+.foundation-project-thumb {
+    width: 94px;
+    height: 94px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.foundation-project-thumb.empty {
+    background: #e2e7ef;
+}
+
+.foundation-project-body {
+    flex: 1;
+}
+
+.foundation-project-body h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #1f2a3b;
+    font-family: 'Prompt', sans-serif;
+}
+
+.foundation-status-pill {
+    display: inline-block;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border-radius: 12px;
+    padding: 3px 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Prompt', sans-serif;
+}
+
+.foundation-status-pill.st-approved { background: #41a956; }
+.foundation-status-pill.st-pending { background: #e3a91f; }
+.foundation-status-pill.st-completed { background: #3C5099; }
+.foundation-status-pill.st-purchasing { background: #eab308; color: #1f2937; }
+.foundation-status-pill.st-rejected { background: #d66565; }
+
+.foundation-project-desc {
+    margin: 0 0 8px;
+    color: #111;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.foundation-progress-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #2d3a4f;
+    font-family: 'Sarabun', sans-serif;
+    margin-bottom: 6px;
+}
+
+.foundation-progress-bar {
+    width: 100%;
+    height: 10px;
+    border-radius: 8px;
+    background: #d5dbe7;
+    overflow: hidden;
+}
+
+.foundation-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6d8f6a 0%, #597D57 100%);
+}
+
+.foundation-project-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 14px;
+}
+
+/* การ์ดโครงการมูลนิธิ: ซ่อนจนกว่าเปิดโหมด (ควบคุมด้วย class บน body เหมือนหน้าเด็ก) */
+.foundation-project-list .project-edit-wrap,
+.foundation-project-list .project-delete-wrap {
+    display: none !important;
+    margin-top: 10px;
+}
+
+body.mode-edit-project .foundation-project-list .project-edit-wrap[data-allow-edit="1"],
+body.mode-delete-project .foundation-project-list .project-delete-wrap[data-allow-delete="1"] {
+    display: block !important;
+}
+
+.foundation-view-actions .foundation-manage-btn.btn-mode-active {
+    outline: none;
+    box-shadow: none;
+}
+
+.foundation-view-actions .foundation-manage-btn-edit.btn-mode-active {
+    background: #e8c94a;
+    color: #1f2937;
+    box-shadow: inset 0 0 0 2px rgba(31, 41, 55, 0.22);
+}
+
+.foundation-view-actions .foundation-manage-btn-danger.btn-mode-active {
+    background: #CC583F;
+    filter: none;
+}
+
+.foundation-view-actions .foundation-manage-btn:focus {
+    outline: none;
+}
+
+.foundation-view-actions .foundation-manage-btn:focus-visible {
+    outline: 2px solid rgba(60, 80, 153, 0.45);
+    outline-offset: 2px;
+}
+
+.foundation-delete-form {
+    margin: 0;
+}
+
+.foundation-empty {
+    background: #f7f8fa;
+    border-radius: 12px;
+    padding: 22px;
+    color: #6b7280;
+    font-family: 'Sarabun', sans-serif;
+    text-align: center;
+}
+
+/* ======== Hero ======== */
+.hero-section {
+    background: white;
+    padding: 50px 20px 26px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: 'Prompt', sans-serif;
+    color: #333;
+}
+
+.hero-title .highlight {
+    color: #3C5099;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #C95039;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* ======== Search + Filter ======== */
+.search-box {
+    max-width: 960px;
+    margin: 0 auto 28px;
+    background: transparent;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto 24px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3.5rem 1rem 1.5rem;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f5f0e8;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    transition: box-shadow 0.2s;
+    box-sizing: border-box;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 0 3px rgba(245, 201, 66, 0.3);
+}
+
+/* override style.css .search-box button à¸—à¸µà¹ˆà¸¡à¸µà¸ªà¸µà¹€à¸«à¸¥à¸·à¸­à¸‡ */
+.search-box .search-button,
+.search-button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.search-button:hover {
+    opacity: 0.7;
+}
+
+.search-button span {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.filter-pills {
+    max-width: 780px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pill-btn {
+    background-color: #f5d45f;
+    color: #2c2c2c;
+    border: none;
+    border-radius: 25px;
+    padding: 0.6rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+}
+
+.pill-btn:hover {
+    background-color: #f0c74d;
+    transform: translateY(-2px);
+}
+
+.pill-btn.active {
+    background-color: #f5d45f;
+}
+
+.pill-btn.pill-blue {
+    background-color: #5b6fc9;
+    color: white;
+}
+
+.pill-btn.pill-blue:hover {
+    background-color: #4d5fb5;
+}
+
+.pill-select {
+    width: 100%;
+    height: 48px;
+    text-align: center;
+    text-align-last: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 2.4rem 0 1rem;
+    box-sizing: border-box;
+    font-size: 1.05rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+}
+
+.pill-select.pill-blue {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+.pill-select:focus {
+    box-shadow: 0 0 0 3px rgba(91, 111, 201, 0.2);
+    transform: translateY(-1px);
+}
+
+.pill-select option,
+.pill-select optgroup {
+    color: #597D57;
+    background: #fff;
+    font-weight: 600;
+}
+
+/* à¸ªà¸–à¸²à¸™à¸°: à¸›à¸¸à¹ˆà¸¡à¸–à¸¹à¸à¹€à¸¥à¸·à¸­à¸ â†’ à¸ªà¸µà¸™à¹‰à¸³à¹€à¸‡à¸´à¸™ */
+.pill-btn.pill-active {
+    background-color: #3C5099;
+    color: white;
+}
+
+.pill-btn.pill-active:hover {
+    background-color: #2e3f7f;
+}
+
+/* à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™ arrow à¸ªà¸µà¸‚à¸²à¸§à¹€à¸¡à¸·à¹ˆà¸­ active */
+.pill-select.pill-active {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+/* ======== Location Two-level Dropdown ======== */
+.loc-dropdown {
+    position: relative;
+}
+
+.loc-trigger {
+    width: 100%;
+    height: 44px;
+    justify-content: space-between;
+    padding: 0 1rem;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.loc-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+    z-index: 500;
+    overflow: hidden;
+    min-width: 290px;
+}
+
+.loc-panel.open {
+    display: flex;
+}
+
+.loc-col-left {
+    width: 130px;
+    background: #f7f7f5;
+    border-right: 1px solid #eee;
+    padding: 6px 0;
+    flex-shrink: 0;
+    max-height: 280px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #3C5099 #f0f0f0;
+}
+
+.loc-col-left::-webkit-scrollbar {
+    width: 6px;
+}
+
+.loc-col-left::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+.loc-col-left::-webkit-scrollbar-thumb {
+    background-color: #3C5099;
+    border-radius: 3px;
+}
+
+.loc-col-right {
+    width: 160px;
+    padding: 6px 0;
+    max-height: 280px;
+    overflow-y: auto;
+    flex-shrink: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #3C5099 #f0f0f0;
+}
+
+.loc-col-right::-webkit-scrollbar {
+    width: 6px;
+}
+
+.loc-col-right::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+.loc-col-right::-webkit-scrollbar-thumb {
+    background-color: #3C5099;
+    border-radius: 3px;
+}
+
+.loc-region-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    color: #597D57;
+    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+}
+
+.loc-region-item:hover,
+.loc-region-item.active {
+    background: #3C5099;
+    color: white;
+}
+
+.loc-province-item {
+    padding: 9px 16px;
+    cursor: pointer;
+    color: #597D57;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 13px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.loc-province-item:hover,
+.loc-province-item.selected {
+    background: #3C5099;
+    color: white;
+}
+
+/* ======== Simple Custom Dropdown (à¸«à¸¡à¸§à¸”à¸«à¸¡à¸¹à¹ˆ, à¸ªà¸–à¸²à¸™à¸°, à¹€à¸£à¸µà¸¢à¸‡à¸•à¸²à¸¡) ======== */
+.cust-dropdown {
+    position: relative;
+}
+
+.cust-trigger {
+    width: 100%;
+    height: 48px;
+    justify-content: space-between;
+    padding: 0 1rem;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.cust-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+    z-index: 500;
+    overflow-y: auto;
+    max-height: 260px;
+    padding: 6px 0;
+    /* scrollbar à¸ªà¸µ #3C5099 */
+    scrollbar-width: thin;
+    scrollbar-color: #3C5099 #f0f0f0;
+}
+
+.cust-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cust-panel::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+.cust-panel::-webkit-scrollbar-thumb {
+    background-color: #3C5099;
+    border-radius: 3px;
+}
+
+.cust-panel.open {
+    display: block;
+}
+
+.cust-option {
+    padding: 10px 18px;
+    cursor: pointer;
+    color: #597D57;
+    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+
+.cust-option:hover,
+.cust-option.selected {
+    background: #3C5099;
+    color: white;
+}
+
+/* หมวดหมู่หลายค่า: รายการแบบเดียวกับดรอปสถานะ */
+.cat-multi-panel.cust-panel {
+    min-width: 100%;
+    padding: 6px 0 0;
+    max-height: 340px;
+}
+
+.cat-multi-dropdown .cust-option.cat-picked {
+    background: #3C5099 !important;
+    color: #fff !important;
+}
+
+.cat-multi-dropdown .cust-option.cat-all-opt:not(.cat-picked):hover,
+.cat-multi-dropdown .cust-option.cat-opt:not(.cat-picked):hover {
+    background: #f2f5fa;
+    color: #3C5099;
+}
+
+.cat-multi-dropdown .cust-option.cat-picked:hover {
+    background: #334584 !important;
+    color: #fff !important;
+}
+
+/* ======== Filter Chips ======== */
+/* ======== Top Actions ======== */
+.top-actions {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1400px;
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+.btn-mini {
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    font-family: 'Prompt', sans-serif;
+}
+
+.btn-foundation {
+    background: #FFD93D;
+    color: #333;
+}
+
+.btn-admin {
+    background: #5C6BC0;
+    color: white;
+}
+
+/* ======== Container ======== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+}
+
+/* ======== Latest Projects Slider ======== */
+/* แถวกลางกว้างเท่า project-grid ด้านล่าง — ปุ่มเลื่อนอยู่คอลัมน์ซ้าย/ขวา */
+.latest-projects-wrap {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0 20px;
+    margin: 8px 0 34px;
+    padding: 0;
+    --latest-gap: 32px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.latest-track-outer {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.latest-track {
+    display: flex;
+    gap: var(--latest-gap);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.latest-track::-webkit-scrollbar {
+    display: none;
+}
+
+.latest-card {
+    min-width: calc((100% - (var(--latest-gap) * 2)) / 3);
+    max-width: calc((100% - (var(--latest-gap) * 2)) / 3);
+    flex: 0 0 calc((100% - (var(--latest-gap) * 2)) / 3);
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #F1CF54;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.latest-card .project-card-title-row {
+    flex-shrink: 0;
+}
+
+.latest-card .project-card-title-row h3 {
+    min-height: 3.6em;
+}
+
+.latest-card .latest-progress-section {
+    margin-top: auto;
+}
+
+/* รูปเต็มการ์ดแนวเดียวกับการ์ดด้านล่าง (cover) */
+.latest-card .project-card-media {
+    flex-shrink: 0;
+    min-height: 200px;
+    position: relative;
+    background: #F1CF54;
+}
+
+.latest-card .project-card-media img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center;
+    border-radius: 0;
+}
+
+.latest-card > img {
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+}
+
+.latest-card .project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 8px 12px 10px;
+}
+
+.latest-card .category-tag {
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+    font-size: 12px;
+    padding: 4px 12px;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+.latest-card .project-card p,
+.latest-card p {
+    font-size: 11px;
+    min-height: 16px;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    margin-bottom: 6px;
+}
+
+/* หลอดโดเนทแบบภาพอ้างอิง: บรรทัดตัวเลข + แท่งหนาแบบ pill */
+.latest-progress-section {
+    margin-bottom: 10px;
+}
+
+.latest-progress-amounts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 8px;
+    margin-bottom: 10px;
+    font-family: 'Sarabun', sans-serif;
+    line-height: 1.25;
+}
+
+.latest-progress-current {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #3C5099;
+}
+
+.latest-progress-unit {
+    font-size: 0.78em;
+    font-weight: 600;
+    color: #3C5099;
+}
+
+.latest-progress-slash {
+    color: #3C5099;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0 2px;
+}
+
+.latest-progress-target-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #CC583F;
+}
+
+.latest-progress-unit--goal {
+    font-size: 0.82em;
+    font-weight: 600;
+    color: #CC583F;
+}
+
+.goal-icon--compact {
+    flex-shrink: 0;
+    color: #CC583F;
+}
+
+.latest-progress-bar-bg {
+    width: 100%;
+    height: 14px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #e0e0e0;
+}
+
+.latest-progress-section .progress-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    min-width: 0;
+}
+
+.latest-card .donate-btn {
+    padding: 6px;
+    font-size: 12px;
+    border-radius: 7px;
+}
+
+.latest-card .progress-label {
+    font-size: 10px;
+    margin-bottom: 4px;
+}
+
+.latest-card .progress-section {
+    margin-bottom: 8px;
+}
+
+.latest-card .project-card-title-row h3 {
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 800;
+    color: #333;
+    white-space: normal;
+}
+
+.latest-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #688f64;
+    color: #fff;
+    border-radius: 15px;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 1;
+}
+
+.latest-nav {
+    position: static;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+    color: #444;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    justify-self: center;
+    z-index: 2;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.latest-nav:hover {
+    transform: scale(1.06);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14);
+    background: #fafafa;
+}
+
+.latest-nav:active {
+    transform: scale(0.98);
+}
+
+.all-projects-head {
+    text-align: center;
+    margin: 4px 0 20px;
+}
+
+.all-projects-head h2 {
+    margin: 0;
+    font-size: 34px;
+    color: #597D57;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 700;
+}
+
+.all-projects-head p {
+    margin: 2px 0 0;
+    color: #666;
+    font-family: 'Sarabun', sans-serif;
+}
+
+/* ======== Project Grid ======== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+    row-gap: 36px;
+    align-items: stretch;
+}
+
+/* การ์ดเต็มความสูงแถว + ปุ่มบริจาคชิดล่างเสมอกันทุกใบ */
+.project-grid > .project-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.project-grid .project-card-media {
+    flex-shrink: 0;
+}
+
+.project-grid .project-card-title-row {
+    flex-shrink: 0;
+}
+
+.project-grid .project-card-title-row h3 {
+    min-height: 3.6em;
+}
+
+.project-grid .project-card > .project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.project-grid .project-card > .project-content > .progress-section {
+    margin-top: auto;
+}
+
+/* ======== Project Card ======== */
+.project-card {
+    border: 2px solid #F1CF54;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #F1CF54;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    animation: fadeIn 0.5s ease-out;
+    padding: 0 !important;
+    margin-bottom: 0;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* กรณีใช้ background-image แทน <img> */
+.project-card.has-bgimg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.project-card.has-bgimg .project-img-fake {
+    display: none;
+}
+.project-card.has-bgimg .project-content,
+.project-card.has-bgimg h3 {
+    position: relative;
+    z-index: 2;
+}
+.project-card.has-bgimg::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 240px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.project-card.clickable-card {
+    cursor: pointer;
+}
+
+.project-card-media {
+    position: relative;
+    width: 100%;
+    min-height: 240px;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    display: block;
+    overflow: hidden;
+    background: #F1CF54;
+}
+
+/* เต็มกล่องเหลือง: ครอบคลุมทุกด้าน ไม่เว้นขอบซ้าย/ขวา/บน */
+.project-card-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0 !important;
+    box-shadow: none;
+}
+
+/* โครงสร้างเก่า: รูปอยู่ตรงๆ ใต้การ์ด */
+.project-card > img {
+    width: 100% !important;
+    height: 240px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0 !important;
+}
+
+/* หัวข้อโครงการ: บรรทัดแรก = คน+เวลา, บรรทัดถัดไป = ชื่อโครงการ */
+.project-card-title-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 16px 20px 10px;
+    box-sizing: border-box;
+}
+
+.project-card-title-row h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    font-weight: 800;
+    color: #333;
+    font-family: 'Prompt', sans-serif;
+    text-align: left;
+    line-height: 1.3;
+    width: 100%;
+}
+
+.project-card-title-row--latest {
+    padding: 10px 12px 6px;
+    gap: 6px;
+}
+
+.project-title-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px 14px;
+    width: 100%;
+}
+
+.project-card-title-row--latest .project-title-meta {
+    font-size: 12px;
+}
+
+.project-card-title-row--latest .project-stat {
+    font-size: 12px;
+    gap: 6px;
+}
+
+/* ======== Category Tag ======== */
+.category-tag {
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 6px 14px;
+    background: #597D57;
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-family: 'Prompt', sans-serif;
+}
+
+/* ในการ์ด flex คอลัมน์ — ไม่ให้แท็กยืดเต็มความกว้างการ์ด */
+.project-grid .project-card > .project-content > .category-tag,
+.latest-card .project-content > .category-tag {
+    align-self: flex-start;
+}
+
+.location-tag {
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 12px;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 600;
+}
+
+/* ======== Card Content ======== */
+.project-content {
+    padding: 0 20px 20px 20px;
+    margin: 0;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.approved { background: #C8E6C9; color: #2E7D32; }
+.pending  { background: #FFF9C4; color: #F57F17; }
+.rejected { background: #FFCDD2; color: #C62828; }
+
+.project-card p,
+.project-card .project-blurb {
+    font-size: 14px;
+    color: #111;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    min-height: 60px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.project-stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0 14px;
+}
+
+.project-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.05rem;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 600;
+    color: #222;
+}
+
+.project-stat-deadline {
+    color: #5a5a5a;
+}
+
+.project-stat-deadline.is-done {
+    color: #597D57;
+    font-weight: 700;
+}
+
+.icon-person-outline,
+.icon-calendar-end {
+    flex-shrink: 0;
+    color: #1a1a1a;
+}
+
+.project-stat-deadline .icon-calendar-end {
+    color: #4a4a4a;
+}
+
+.project-stat-deadline.is-done .icon-calendar-end {
+    color: #597D57;
+}
+
+/* ======== Progress ======== */
+.progress-section { margin-bottom: 15px; }
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 700;
+}
+
+.progress-label-rows {
+    align-items: flex-start;
+}
+
+.progress-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 48%;
+}
+
+.progress-col-right {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.progress-sublabel {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.progress-col-left .progress-sublabel,
+.progress-col-left .progress-amount {
+    color: #3C5099;
+}
+
+.progress-sublabel-dim {
+    opacity: 0;
+    user-select: none;
+}
+
+.progress-amount {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.progress-goal {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.progress-col-right .progress-goal,
+.progress-col-right .goal-icon {
+    color: #CC583F;
+}
+
+.goal-icon {
+    flex-shrink: 0;
+}
+
+.progress-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-pct {
+    flex-shrink: 0;
+    min-width: 2.75rem;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: 'Prompt', sans-serif;
+    color: #333;
+    text-align: right;
+}
+
+.progress-bar-bg {
+    flex: 1;
+    height: 24px;
+    background: #E0E0E0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #CC583F;
+    border-radius: 12px;
+    transition: width 0.5s ease;
+    min-width: 0;
+}
+
+/* ======== Donate Button ======== */
+.donate-btn {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    background: #3C5099;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-family: 'Prompt', sans-serif;
+}
+
+.donate-btn:hover {
+    background: #334584;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(60, 80, 153, 0.3);
+}
+
+.donate-btn--results {
+    background: #597D57;
+    color: #fff;
+}
+
+.donate-btn--results:hover {
+    background: #4a6a48;
+    box-shadow: 0 4px 12px rgba(89, 125, 87, 0.35);
+}
+
+/* ======== No Projects ======== */
+.no-projects {
+    text-align: center;
+    padding: 60px 20px;
+    grid-column: 1 / -1;
+}
+
+.no-projects-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.no-projects p {
+    color: #999;
+    font-size: 18px;
+    font-family: 'Prompt', sans-serif;
+}
+
+/* ======== Animation ======== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* ======== Responsive ======== */
+@media (max-width: 1024px) {
+    .project-grid  { grid-template-columns: repeat(2, 1fr); }
+    .hero-title    { font-size: 36px; }
+    .foundation-view-toolbar {
+        flex-wrap: wrap;
+    }
+    .foundation-manage-btn-donor {
+        margin-left: 0;
+    }
+    .latest-projects-wrap {
+        max-width: 100%;
+    }
+    .latest-card {
+        min-width: calc((100% - var(--latest-gap)) / 2);
+        max-width: calc((100% - var(--latest-gap)) / 2);
+        flex-basis: calc((100% - var(--latest-gap)) / 2);
+    }
+}
+
+@media (max-width: 640px) {
+    .latest-projects-wrap {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 0 10px;
+    }
+    .latest-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+    .project-grid  { grid-template-columns: 1fr; }
+    .hero-title    { font-size: 28px; }
+    .top-actions   { justify-content: center; }
+    .foundation-project-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .foundation-view-actions {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .foundation-view-toolbar {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .foundation-project-actions .foundation-manage-btn,
+    .foundation-delete-form,
+    .foundation-delete-form .foundation-manage-btn {
+        width: 100%;
+        margin-left: 0;
+    }
+    .foundation-progress-meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .search-container { max-width: 100%; }
+    .filter-pills {
+        grid-template-columns: 1fr 1fr;
+        max-width: 420px;
+        gap: 10px;
+    }
+    .pill-select,
+    .pill-select.pill-blue {
+        width: 100%;
+        height: 44px;
+    }
+    .latest-card {
+        min-width: 100%;
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+    .all-projects-head h2 {
+        font-size: 28px;
+    }
+}   
+
+/* ========================================
+   addproject.css (scoped) for foundation_add_project.php
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Sarabun:wght@400;500&display=swap');
+
+body.project-form-page {
+    --theme-primary: #3C5099;
+    --theme-primary-dark: #2e407f;
+    --theme-soft: #F1CF54;
+    --theme-ink: #27364b;
+    --theme-bg: #F7ECDE;
+    --theme-card: #fff;
+    --theme-border: #F1CF54;
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+    background: var(--theme-bg);
+    color: var(--theme-ink);
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+body.project-form-page *,
+body.project-form-page *::before,
+body.project-form-page *::after {
+    box-sizing: border-box;
+}
+
+body.project-form-page .form-container {
+    display: flex;
+    gap: 42px;
+    max-width: 1280px;
+    margin: auto;
+    padding: 42px 40px;
+}
+
+body.project-form-page .left-box {
+    width: 32%;
+    flex-shrink: 0;
+}
+
+body.project-form-page .left-box h2 {
+    color: #24314a;
+    margin-bottom: 6px;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+body.project-form-page .left-foundation-name {
+    color: #000;
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+body.project-form-page .upload-box {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background: #de8168;
+    border: 4px dashed #597D57;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    background-size: cover;
+    background-position: center;
+}
+
+body.project-form-page .left-info-card input[type="file"] {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    font-size: 0.95rem;
+    font-family: 'Sarabun', sans-serif;
+}
+
+body.project-form-page .left-file-bare {
+    margin-top: 10px;
+}
+
+body.project-form-page .left-file-bare label {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1f3654;
+    margin-bottom: 6px;
+}
+
+body.project-form-page .left-file-bare input[type="file"] {
+    display: block;
+    width: 100%;
+    font-size: 0.95rem;
+    font-family: 'Sarabun', sans-serif;
+}
+
+body.project-form-page .left-info-card {
+    margin-top: 14px;
+    background: #fff;
+    border: 1.5px solid var(--theme-border);
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 4px 12px rgba(16, 53, 90, 0.05);
+}
+
+body.project-form-page .left-info-card h3 {
+    margin: 0 0 9px;
+    font-size: 1rem;
+    color: #17406a;
+    font-weight: 800;
+}
+
+body.project-form-page .left-info-card p {
+    margin: 3px 0;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.65;
+}
+
+body.project-form-page .right-box {
+    flex: 1;
+    background: var(--theme-card);
+    padding: 34px;
+    border-radius: 22px;
+    border: 1.5px solid var(--theme-border);
+    box-shadow: 0 10px 26px rgba(25, 48, 77, 0.08);
+}
+
+body.project-form-page .form-group {
+    margin-bottom: 16px;
+}
+
+body.project-form-page .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    color: #1f3654;
+    font-size: 1rem;
+}
+
+body.project-form-page .form-group input[type="text"],
+body.project-form-page .form-group input[type="number"],
+body.project-form-page .form-group input[type="date"],
+body.project-form-page .form-group textarea,
+body.project-form-page .form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--theme-border);
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-family: 'Sarabun', 'Prompt', sans-serif;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+body.project-form-page .form-group input:focus,
+body.project-form-page .form-group textarea:focus,
+body.project-form-page .form-group select:focus {
+    outline: none;
+    border-color: var(--theme-primary);
+    box-shadow: 0 0 0 4px rgba(60, 80, 153, 0.14);
+}
+
+body.project-form-page .form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+body.project-form-page .donation-opts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+body.project-form-page .donation-opts-grid input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--theme-border);
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-family: 'Sarabun', 'Prompt', sans-serif;
+    background: #fff;
+    text-align: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+body.project-form-page .donation-opts-grid input:focus {
+    outline: none;
+    border-color: var(--theme-primary);
+    box-shadow: 0 0 0 4px rgba(60, 80, 153, 0.14);
+}
+
+body.project-form-page .btn-submit {
+    background: #F5DD86;
+    color: #1a1a1a;
+    padding: 16px 28px;
+    border: none;
+    border-radius: 999px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    font-weight: 800;
+    width: 100%;
+    max-width: 420px;
+    margin: 18px auto 0;
+    display: block;
+    font-family: 'Prompt', sans-serif;
+    transition: transform 0.15s ease, background 0.15s ease;
+    box-shadow: none;
+}
+
+body.project-form-page .btn-submit:hover {
+    transform: translateY(-1px);
+    background: #edd66f;
+    box-shadow: none;
+}
+
+@media (max-width: 860px) {
+    body.project-form-page .form-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    body.project-form-page .left-box {
+        width: 100%;
+    }
+
+    body.project-form-page .donation-opts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   admin project pages
+   used by: admin_projects.php, admin_approve_projects.php
+   ======================================== */
+
+body.admin-projects-page .wrap,
+body.admin-approve-projects-page .wrap {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+body.admin-projects-page table,
+body.admin-approve-projects-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+body.admin-projects-page th,
+body.admin-projects-page td,
+body.admin-approve-projects-page th,
+body.admin-approve-projects-page td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+body.admin-projects-page th,
+body.admin-approve-projects-page th {
+    background: #f7f7f7;
+    text-align: left;
+}
+
+body.admin-projects-page .thumb,
+body.admin-approve-projects-page .thumb {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #ddd;
+}
+
+body.admin-projects-page .btn,
+body.admin-approve-projects-page .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+body.admin-projects-page .approve,
+body.admin-approve-projects-page .approve {
+    background: #1e2f97;
+    color: #fff;
+}
+
+body.admin-projects-page .reject,
+body.admin-approve-projects-page .reject {
+    background: #CC583F;
+    color: #fff;
+}
+
+body.admin-projects-page .reject:hover,
+body.admin-approve-projects-page .reject:hover {
+    background: #b04a33;
+}
+
+body.admin-projects-page .msg,
+body.admin-approve-projects-page .msg {
+    margin: 10px 0 15px;
+    padding: 10px 12px;
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+}
+
+body.admin-projects-page textarea,
+body.admin-approve-projects-page textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

@@ -1,0 +1,191 @@
+/* รายการภาพรวมผู้บริจาค / มูลนิธิ / เด็ก — จากแดชบอร์ดแอดมิน */
+.admin-directory-page {
+    max-width: 1280px;
+    margin: 24px auto;
+    padding: 0 20px 40px;
+    box-sizing: border-box;
+}
+
+body.admin-sidebar-page .admin-directory-page {
+    max-width: none;
+    margin: 18px 0 32px;
+    padding-right: 8px;
+}
+
+.admin-directory-head {
+    margin-bottom: 20px;
+}
+
+.admin-directory-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: #4A5BA8;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.admin-directory-back:hover {
+    text-decoration: underline;
+}
+
+.admin-directory-title {
+    font-family: 'Prompt', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 6px;
+}
+
+.admin-directory-desc {
+    font-family: 'Sarabun', sans-serif;
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 16px;
+    max-width: 720px;
+}
+
+.admin-directory-actions-hint {
+    background: #f0f4ff;
+    border: 1px solid #c7d4f7;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    color: #374151;
+    margin-bottom: 20px;
+}
+
+.admin-directory-actions-hint strong {
+    color: #1e3a5f;
+}
+
+.admin-dir-table-wrap {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    overflow-x: auto;
+}
+
+.admin-dir-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 0.9rem;
+}
+
+.admin-dir-table th,
+.admin-dir-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #eef0f4;
+    vertical-align: middle;
+}
+
+.admin-dir-table th {
+    background: #f8fafc;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap;
+}
+
+.admin-dir-table tr:hover td {
+    background: #fafbff;
+}
+
+.admin-dir-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.admin-dir-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.admin-dir-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 11px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif;
+}
+
+.admin-dir-btn--primary {
+    background: #4A5BA8;
+    color: #fff;
+}
+
+.admin-dir-btn--primary:hover {
+    background: #3d4d94;
+    color: #fff;
+}
+
+.admin-dir-btn--ghost {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.admin-dir-btn--ghost:hover {
+    background: #e5e7eb;
+}
+
+.b--muted {
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+.badge-verified {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-verified--yes {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.badge-verified--no {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.admin-dir-thumb {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #e5e7eb;
+}
+
+.admin-stat-card-wrap {
+    text-decoration: none;
+    color: inherit;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+}
+
+.admin-stat-card-wrap:hover .stat-card,
+.admin-stat-card-wrap:focus-visible .stat-card {
+    box-shadow: 0 12px 28px rgba(31, 41, 55, 0.14);
+}
+
+.admin-stat-card-wrap:focus {
+    outline: 2px solid #4A5BA8;
+    outline-offset: 2px;
+}
+
+.admin-stat-card-wrap .stat-card {
+    height: 100%;
+}

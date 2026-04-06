@@ -1,0 +1,1020 @@
+/* ========================================
+   profile.css — ใช้ร่วมกัน profile.php และ update_profile.php
+   ======================================== */
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+}
+
+/* ======== Profile Page ======== */
+
+.profile-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.profile-image-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f0f0f0;
+    flex-shrink: 0;
+}
+
+.profile-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    font-size: 32px;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.profile-info p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.profile-header--donor {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+}
+
+.profile-info--donor .info-row {
+    text-align: center;
+}
+
+.profile-image-placeholder--donor {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #597D57;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image-placeholder--donor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-image-placeholder--donor .profile-image-default {
+    object-fit: contain;
+    transform: scale(0.92);
+}
+
+.info-row {
+    margin: 10px 0;
+    color: #666;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.badge-admin {
+    color: #E57373;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.btn-edit {
+    background: #4A5BA8;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.btn-edit:hover {
+    background: #3d4d8f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 91, 168, 0.3);
+}
+
+.btn-edit--donor {
+    background: #597D57;
+    box-shadow: 0 4px 12px rgba(89, 125, 87, 0.28);
+}
+
+.btn-edit--donor:hover {
+    background: #4f6d4d;
+    box-shadow: 0 4px 14px rgba(89, 125, 87, 0.35);
+}
+
+.donor-menu {
+    width: min(100%, 700px);
+    margin: 0 auto 18px;
+    display: grid;
+    gap: 12px;
+}
+
+.profile-menu-btn {
+    width: 100%;
+    min-height: 78px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #f4f5fb 100%);
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(44, 62, 107, 0.10);
+    transition: transform .18s ease, box-shadow .18s ease;
+    box-sizing: border-box;
+}
+
+.profile-menu-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(44, 62, 107, 0.15);
+}
+
+.profile-menu-btn--edit { border-left: 5px solid #597D57; }
+.profile-menu-btn--history { border-left: 5px solid #3C5099; }
+
+.profile-menu-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2ff;
+    font-size: 18px;
+    color: #4c5f9f;
+}
+
+.profile-menu-label {
+    color: #1d2a48;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.profile-menu-arrow {
+    margin-left: auto;
+    color: #7a86a5;
+    font-size: 26px;
+    line-height: 1;
+}
+
+.donor-history-panel {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(60, 80, 153, 0.08);
+    padding: 20px 18px 12px;
+}
+
+.donor-history-panel .donation-summary {
+    background: #eef2ff;
+}
+
+.donor-history-panel .log-item--donation {
+    background: #fcfcff;
+    border-left-width: 5px;
+}
+
+.log-item--donation {
+    cursor: default;
+}
+
+.log-item--donation:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.donation-amount-num {
+    color: #E74C3C;
+    font-weight: 700;
+}
+
+.log-item--donation .log-ref {
+    font-size: 12px;
+    color: #999;
+}
+
+.donation-more-wrap {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.btn-donation-more {
+    background: #fff;
+    color: #597D57;
+    border: 2px solid #597D57;
+    padding: 10px 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-donation-more:hover {
+    background: #597D57;
+    color: #fff;
+}
+
+/* donor top card (match reference layout) */
+.donor-summary-head {
+    margin-bottom: 14px;
+}
+.donor-year-filter-wrap {
+    position: relative;
+    display: inline-block;
+}
+.donor-year-filter {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid #d0d5dd;
+    background: #fff;
+    border-radius: 14px;
+    min-width: 160px;
+    height: 58px;
+    padding: 0 44px 0 16px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff6b2d;
+    cursor: pointer;
+}
+.donor-year-filter-wrap::after {
+    content: "⌄";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #1f2937;
+    pointer-events: none;
+}
+
+.donor-hero-card {
+    background: #f7c8b0;
+    border-radius: 12px;
+    padding: 18px 16px 14px;
+    margin-bottom: 24px;
+}
+.donor-hero-main {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 210px);
+}
+.donor-chip-name {
+    display: inline-block;
+    background: #fff1e9;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 30px;
+    color: #1f2d4d;
+    margin-bottom: 14px;
+}
+.donor-total-label {
+    color: #1f2d4d;
+    font-size: 16px;
+}
+.donor-total-amount {
+    font-size: 42px;
+    line-height: 1.05;
+    font-weight: 800;
+    color: #0e2b4a;
+}
+.donor-total-amount span {
+    font-size: 24px;
+    font-weight: 500;
+}
+.donor-hero-art {
+    float: right;
+    width: 190px;
+    text-align: right;
+}
+.donor-hero-art img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+.donor-tax-grid {
+    clear: both;
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+}
+.donor-tax-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.donor-tax-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0e2b4a;
+    font-size: 28px;
+}
+.tax-badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #f6b735;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+.donor-tax-right {
+    text-align: right;
+    color: #0e2b4a;
+}
+.donor-tax-right strong {
+    display: block;
+    font-size: 30px;
+    line-height: 1.1;
+}
+.donor-tax-right small {
+    font-size: 16px;
+    color: #46576d;
+}
+
+.log-item--donation {
+    border-left-width: 5px;
+}
+
+/* ======== Bank Info Alert ======== */
+
+.alert-bank {
+    background: #fff8e1;
+    border-left: 4px solid #FFC107;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #7a5f00;
+    font-weight: 500;
+}
+
+.alert-bank--foundation {
+    width: min(100%, 700px);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 14px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.foundation-donor-menu {
+    margin-top: 4px;
+}
+
+.foundation-projects-panel {
+    margin-top: 18px;
+}
+
+.foundation-projects-panel.logs-section {
+    border-top: none;
+    padding-top: 20px;
+    margin-top: 18px;
+}
+
+.foundation-projects-panel h2 {
+    margin-top: 0;
+}
+
+.foundation-empty-projects {
+    text-align: center;
+    color: #999;
+    padding: 30px 16px;
+}
+
+/* ======== Foundation: รายรับตามหมวด ======== */
+
+.foundation-finance-panel .foundation-finance-lead {
+    color: #5c6578;
+    font-size: 15px;
+    margin: -6px 0 18px;
+    line-height: 1.5;
+}
+
+.foundation-finance-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+@media (max-width: 640px) {
+    .foundation-finance-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+.foundation-finance-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f6f7fb 100%);
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 6px 18px rgba(44, 62, 107, 0.08);
+    border-left: 5px solid #9e9e9e;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.foundation-finance-card--child {
+    border-left-color: #597D57;
+}
+
+.foundation-finance-card--project {
+    border-left-color: #3C5099;
+}
+
+.foundation-finance-card--need {
+    border-left-color: #c67c2a;
+}
+
+.foundation-finance-card__cat {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1d2a48;
+}
+
+.foundation-finance-card__amount {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0e2b4a;
+    letter-spacing: -0.02em;
+}
+
+.foundation-finance-card__amount small {
+    font-size: 14px;
+    font-weight: 600;
+    color: #5c6578;
+}
+
+.foundation-finance-total-row {
+    text-align: center;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    background: #eef2ff;
+    border-radius: 12px;
+    color: #3C5099;
+    font-size: 16px;
+}
+
+.foundation-finance-total-row strong {
+    font-size: 18px;
+    color: #1d2a48;
+}
+
+.foundation-finance-note {
+    font-size: 13px;
+    color: #6d5a3a;
+    background: #fff9ed;
+    border-left: 4px solid #e8b84a;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin: 0 0 18px;
+    line-height: 1.45;
+}
+
+.foundation-finance-subhead {
+    font-size: 18px;
+    color: #333;
+    margin: 8px 0 14px;
+    font-weight: 700;
+}
+
+.foundation-finance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.foundation-finance-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #fcfcff;
+    border-radius: 12px;
+    border: 1px solid #e8eaf3;
+}
+
+.foundation-finance-badge {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 999px;
+    color: #fff;
+}
+
+.foundation-finance-badge--child {
+    background: #597D57;
+}
+
+.foundation-finance-badge--project {
+    background: #3C5099;
+}
+
+.foundation-finance-badge--need {
+    background: #b8752a;
+}
+
+.foundation-finance-row__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.foundation-finance-row__title {
+    font-weight: 600;
+    color: #1d2a48;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+.foundation-finance-row__time {
+    font-size: 12px;
+    color: #8b93a8;
+    margin-top: 4px;
+}
+
+.foundation-finance-row__amount {
+    flex-shrink: 0;
+    font-weight: 800;
+    color: #c0392b;
+    font-size: 15px;
+}
+
+.foundation-finance-empty {
+    margin-top: 8px;
+}
+
+/* ======== Activity Log (Admin) ======== */
+
+.logs-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.logs-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.log-item {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid #4A5BA8;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.log-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.log-item.approve {
+    border-left-color: #4CAF50;
+    background: #f1f8f4;
+}
+
+.log-item.reject {
+    border-left-color: #E57373;
+    background: #fef5f5;
+}
+
+.log-action {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.log-details {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.log-remark {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 5px;
+    color: #E57373;
+    font-style: italic;
+}
+
+.log-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* ======== Modal ======== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+/* =============================
+     Responsive สำหรับ Mobile
+     ============================= */
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 16px 2vw;
+        margin: 16px auto;
+        border-radius: 12px;
+    }
+    .profile-header {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+    }
+    .profile-image-placeholder {
+        width: 90px;
+        height: 90px;
+    }
+    .profile-info h1 {
+        font-size: 1.1rem;
+    }
+    .btn-edit {
+        font-size: 1rem;
+        padding: 8px 0;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .logs-section h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .log-item {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+    .log-action {
+        font-size: 1rem;
+    }
+    .log-details, .log-remark, .log-time {
+        font-size: 0.95rem;
+    }
+}
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.modal-close:hover { color: #333; }
+
+.modal-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.modal-section { margin-bottom: 15px; }
+
+.modal-label {
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.modal-value {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ======== Update Profile Page ======== */
+
+.update-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.update-container h2 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.section-divider {
+    border: none;
+    border-top: 2px solid #f0f0f0;
+    margin: 30px 0;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4A5BA8;
+    margin-bottom: 20px;
+}
+
+.image-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px 0;
+}
+
+.btn-submit {
+    background: #4CAF50;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-submit:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.btn-cancel {
+    background: #999;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+/* ======== Alerts ======== */
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.alert-error {
+    background: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #c62828;
+}
+
+.alert-success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #2e7d32;
+}
+
+.donation-summary {
+    background: #f0f4ff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    color: #4A5BA8;
+    font-size: 15px;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.project-item {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-left: 4px solid #ddd;
+    transition: all 0.3s;
+}
+
+.project-item.completed { border-left-color: #4A5BA8; background: #f0f4ff; }
+.project-item.approved { border-left-color: #4CAF50; background: #f1f8f4; }
+.project-item.pending { border-left-color: #FFC107; background: #fffdf0; }
+.project-item.rejected { border-left-color: #E57373; background: #fff5f5; }
+
+.project-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.project-thumb-empty {
+    width: 80px;
+    height: 80px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.project-detail { flex: 1; }
+
+.project-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.project-bar-wrap {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.project-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #4A5BA8, #667eea);
+    transition: width 0.5s ease;
+}
+
+.project-amount {
+    font-size: 13px;
+    color: #666;
+}
+
+.project-amount strong { color: #4A5BA8; }
+
+/* โปรไฟล์ผู้บริจาค — เด็กที่สมัครอุปการะงวด (profile.php) */
+.donor-sponsorship-active-banner {
+    margin: 0 0 18px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border: 1px solid rgba(22, 163, 74, 0.25);
+}
+.donor-sponsorship-active-banner__title {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #166534;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.donor-sponsorship-active-banner__list {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #14532d;
+    line-height: 1.55;
+}
+.donor-sponsorship-active-banner__meta {
+    font-weight: 600;
+    color: #15803d;
+}
+.donor-history-hint {
+    margin: 0 0 12px;
+    padding: 12px 14px;
+    font-size: 0.92rem;
+    color: #4b5563;
+    background: #f9fafb;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+.donor-history-hint code {
+    font-size: 0.85em;
+    word-break: break-all;
+}

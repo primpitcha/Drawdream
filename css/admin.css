@@ -1,0 +1,225 @@
+/* =====================================================
+   admin.css
+   ใช้กับ:
+   - admin_projects.php
+   - admin_approve_projects.php
+   - admin_approve_needlist.php
+   ===================================================== */
+
+/* ===== admin_projects.php + admin_approve_projects.php ===== */
+body.admin-projects-page,
+body.admin-approve-projects-page,
+body.admin-approve-needlist-page {
+    background: #F7ECDE;
+}
+
+body.admin-projects-page .wrap,
+body.admin-approve-projects-page .wrap {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+body.admin-projects-page table,
+body.admin-approve-projects-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+body.admin-projects-page th,
+body.admin-projects-page td,
+body.admin-approve-projects-page th,
+body.admin-approve-projects-page td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+body.admin-projects-page th,
+body.admin-approve-projects-page th {
+    background: #f7f7f7;
+    text-align: left;
+}
+
+body.admin-projects-page .thumb,
+body.admin-approve-projects-page .thumb {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #ddd;
+}
+
+body.admin-projects-page .btn,
+body.admin-approve-projects-page .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+body.admin-projects-page .approve,
+body.admin-approve-projects-page .approve {
+    background: #1e2f97;
+    color: #fff;
+}
+
+body.admin-projects-page .reject,
+body.admin-approve-projects-page .reject {
+    background: #CC583F;
+    color: #fff;
+}
+
+body.admin-projects-page .reject:hover,
+body.admin-approve-projects-page .reject:hover {
+    background: #b04a33;
+}
+
+body.admin-projects-page .msg,
+body.admin-approve-projects-page .msg {
+    margin: 10px 0 15px;
+    padding: 10px 12px;
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+}
+
+body.admin-projects-page textarea,
+body.admin-approve-projects-page textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* ===== admin_approve_needlist.php ===== */
+body.admin-approve-needlist-page .wrap {
+    max-width: 1400px;
+    margin: 24px auto;
+    padding: 0 24px;
+}
+
+body.admin-approve-needlist-page .msg {
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+body.admin-approve-needlist-page .msg.ok {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+}
+
+body.admin-approve-needlist-page .msg.err {
+    background: #ffe5e5;
+    border: 1px solid #ffb3b3;
+}
+
+body.admin-approve-needlist-page .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+body.admin-approve-needlist-page .admin-table th,
+body.admin-approve-needlist-page .admin-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+body.admin-approve-needlist-page .admin-table th {
+    background: #f7f7f7;
+    text-align: left;
+}
+
+body.admin-approve-needlist-page .admin-need-img-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    vertical-align: top;
+}
+
+body.admin-approve-needlist-page .admin-thumb {
+    width: 110px;
+    height: 80px;
+    object-fit: contain;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+body.admin-approve-needlist-page .admin-thumb-fdn {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border: 2px solid #e8dc9a;
+}
+
+body.admin-approve-needlist-page .admin-noimg {
+    width: 110px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    color: #777;
+    font-size: 12px;
+}
+
+body.admin-approve-needlist-page .urgent-tag {
+    display: inline-block;
+    background: #ff4d4d;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+body.admin-approve-needlist-page .admin-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+body.admin-approve-needlist-page .admin-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+body.admin-approve-needlist-page .admin-btn.approve {
+    background: #1e2f97;
+    color: #fff;
+}
+
+body.admin-approve-needlist-page .admin-btn.reject {
+    background: #CC583F;
+    color: #fff;
+}
+
+body.admin-approve-needlist-page .admin-btn.reject:hover {
+    background: #b04a33;
+}
+
+body.admin-approve-needlist-page .admin-note {
+    width: 260px;
+    max-width: 100%;
+    height: 70px;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    padding: 8px;
+}

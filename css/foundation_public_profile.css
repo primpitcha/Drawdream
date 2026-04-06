@@ -1,0 +1,165 @@
+/* Public foundation profile — layout ตาม mockup */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@400;500&display=swap');
+
+body.foundation-public-profile-page {
+    background: #f0ebe3;
+    min-height: 100vh;
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+}
+
+.fpub-wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 32px 20px 56px;
+}
+
+.fpub-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.fpub-header {
+    background: #f5f7fa;
+    padding: 32px 28px 28px;
+}
+
+.fpub-header-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.fpub-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #e2e8f0;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fpub-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fpub-avatar--empty {
+    color: #94a3b8;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.fpub-head-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.fpub-head-text h1 {
+    margin: 0 0 8px;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #3c5099;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+
+.fpub-loc {
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3c5099;
+}
+
+.fpub-loc .bi {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+.fpub-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.fpub-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.fpub-chip .bi {
+    color: #64748b;
+    font-size: 1.05rem;
+}
+
+.fpub-body {
+    padding: 28px 28px 36px;
+    background: #fff;
+}
+
+.fpub-body h2 {
+    margin: 0 0 16px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3c5099;
+}
+
+.fpub-desc {
+    font-family: 'Sarabun', 'Prompt', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #1e293b;
+}
+
+.fpub-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #3c5099;
+    text-decoration: none;
+}
+
+.fpub-back:hover {
+    text-decoration: underline;
+    color: #2d4580;
+}
+
+@media (max-width: 600px) {
+    .fpub-header {
+        padding: 24px 18px 22px;
+    }
+    .fpub-header-inner {
+        gap: 16px;
+    }
+    .fpub-avatar {
+        width: 80px;
+        height: 80px;
+    }
+    .fpub-head-text h1 {
+        font-size: 1.35rem;
+    }
+    .fpub-body {
+        padding: 22px 18px 28px;
+    }
+}

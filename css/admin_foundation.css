@@ -1,0 +1,307 @@
+/* ========================================
+   Admin Approve Foundation Styles
+   admin_approve_foundation.php
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap');
+
+body {
+    background: #F7ECDE;
+    font-family: 'Prompt', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 32px auto;
+    padding: 0 24px 60px;
+}
+
+/* ===== Header ===== */
+.page-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2C2C2C;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #AAA;
+    font-family: 'Sarabun', sans-serif;
+    margin-bottom: 28px;
+}
+
+.badge-pending {
+    background: #FFF3CD;
+    color: #856404;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'Sarabun', sans-serif;
+}
+
+/* ===== Alert ===== */
+.alert {
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.alert-success {
+    background: #E8F5E9;
+    color: #2E7D32;
+    border-left: 4px solid #2E7D32;
+}
+
+/* ===== List View ===== */
+.card-list {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    overflow: hidden;
+}
+
+.card-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 32px;
+    border-bottom: 1px solid #F5F0E8;
+    transition: background 0.2s;
+    gap: 16px;
+}
+
+.card-item:last-child { border-bottom: none; }
+.card-item:hover { background: #FDFAF4; }
+
+.item-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.item-icon {
+    width: 46px;
+    height: 46px;
+    background: #FFF3E0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.item-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2C2C2C;
+}
+
+.item-meta {
+    font-size: 13px;
+    color: #BBB;
+    font-family: 'Sarabun', sans-serif;
+    margin-top: 3px;
+}
+
+.btn-check {
+    padding: 10px 26px;
+    background: white;
+    border: 2px solid #2C2C2C;
+    border-radius: 50px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    color: #2C2C2C;
+    transition: all 0.25s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-check:hover {
+    background: #2C2C2C;
+    color: white;
+}
+
+.empty {
+    text-align: center;
+    padding: 70px 20px;
+    color: #CCC;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+/* ===== Detail View ===== */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #AAA;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Sarabun', sans-serif;
+    margin-bottom: 20px;
+    transition: color 0.2s;
+}
+
+.back-link:hover { color: #2C2C2C; }
+
+.detail-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 44px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #F5F0E8;
+}
+
+.detail-icon {
+    width: 58px;
+    height: 58px;
+    background: #FFF3E0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.detail-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2C2C2C;
+}
+
+.detail-subtitle {
+    font-size: 14px;
+    color: #AAA;
+    font-family: 'Sarabun', sans-serif;
+    margin-top: 4px;
+}
+
+/* ===== Fields ===== */
+.field-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 32px;
+}
+
+.field-full { grid-column: 1 / -1; }
+
+.field label {
+    font-size: 12px;
+    color: #BBB;
+    font-family: 'Sarabun', sans-serif;
+    letter-spacing: 0.4px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.field-value {
+    font-size: 15px;
+    color: #2C2C2C;
+    font-weight: 500;
+    background: #FAFAF8;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #EEEBE4;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.field-value.tall {
+    align-items: flex-start;
+    min-height: 80px;
+    white-space: pre-line;
+}
+
+/* ===== Action Buttons ===== */
+.btn-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 36px;
+}
+
+.btn-row__form {
+    flex: 1;
+}
+
+.btn-row__form .btn-approve,
+.btn-row__form .btn-reject {
+    width: 100%;
+}
+
+.btn-approve {
+    flex: 1;
+    padding: 15px;
+    background: #597D57;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Prompt', sans-serif;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.btn-approve:hover {
+    background: #4a6a48;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(89, 125, 87, 0.35);
+}
+
+.btn-reject {
+    flex: 1;
+    padding: 15px;
+    background: #CC583F;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Prompt', sans-serif;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.btn-reject:hover {
+    background: #b04a33;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(204, 88, 63, 0.35);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .field-grid { grid-template-columns: 1fr; }
+    .field-full { grid-column: 1; }
+    .detail-card { padding: 28px 24px; }
+    .card-item { padding: 18px 20px; }
+    .btn-row { flex-direction: column; }
+}

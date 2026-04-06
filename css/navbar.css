@@ -1,0 +1,789 @@
+/* ========================================
+   Global Navbar Styles
+   ใช้ได้กับทุกหน้า
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap');
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    padding-top: 82px !important;
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+}
+
+.navbar {
+    background: white;
+    margin-top: 0 !important;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 82px;
+    box-sizing: border-box;
+}
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.nav-logo {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-left {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 2;
+}
+
+.nav-left a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Prompt', sans-serif;
+    transition: all 0.3s;
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-left a:hover { color: #E74C3C; }
+
+.nav-left a.active {
+    color: #E74C3C;
+    font-weight: 600;
+}
+
+.nav-left a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #E74C3C;
+    border-radius: 2px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 2;
+}
+
+/* ===== Notification Bell ===== */
+.notif-btn {
+    position: relative;
+    width: auto;
+    height: auto;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 4px;
+    border-radius: 0;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: opacity 0.2s;
+    color: #333;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.notif-btn:hover {
+    background: transparent !important;
+    opacity: 0.72;
+}
+
+.notif-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #E74C3C;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Prompt', sans-serif;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    border: 2px solid white;
+}
+
+/* ===== Profile & Logout ===== */
+.profile-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    flex-shrink: 0;
+}
+
+.profile-btn:hover {
+    opacity: 0.88;
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 20px;
+    color: #333;
+    font-weight: 600;
+    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.logout-btn:hover {
+    background: #333;
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+        gap: 10px;
+    }
+    .nav-left { gap: 15px; justify-content: center; order: 2; }
+    .nav-center { order: 1; }
+    .nav-right { order: 3; justify-content: center; }
+    .nav-left a { font-size: 14px; }
+    .nav-logo { height: 50px; }
+}
+.nav-icon {
+    width: 28px !important;
+    height: 28px !important;
+    object-fit: contain !important;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.nav-bell-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #222;
+}
+
+.profile-btn .nav-profile-photo,
+.profile-btn img.nav-icon {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center center;
+    border-radius: 0;
+    display: block;
+}
+
+.nav-profile-photo {
+    object-fit: cover !important;
+}
+.nav-left {
+    gap: 25px !important;
+}
+.navbar {
+    font-size: 16px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.nav-left a {
+    font-size: 16px !important;
+}
+
+/* ปุ่มมุมมองผู้บริจาค (เสนอเฉพาะ foundation) */
+.donor-view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Prompt', sans-serif;
+    text-decoration: none;
+    background: #597D57;
+    color: #fff;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(89,125,87,0.25);
+}
+
+.donor-view-btn:hover {
+    background: #4a6a49;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(89,125,87,0.35);
+}
+
+/* ========================================
+   Admin Sidebar Navigation
+   ======================================== */
+
+/* =============================
+     Responsive สำหรับ Mobile
+     ============================= */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        min-height: unset;
+        padding: 8px 2vw;
+        gap: 0;
+        font-size: 15px;
+    }
+    .nav-left, .nav-right {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+        width: 100%;
+        justify-content: center;
+    }
+    .nav-center {
+        position: static;
+        transform: none;
+        margin-bottom: 6px;
+    }
+    .nav-logo {
+        height: 38px;
+        margin: 0 auto;
+    }
+    .nav-left a, .logout-btn, .donor-view-btn {
+        font-size: 1rem !important;
+        padding: 8px 0;
+        width: 100%;
+        text-align: left;
+    }
+    .notif-btn {
+        width: auto;
+        height: auto;
+        min-width: 36px;
+        min-height: 36px;
+        font-size: 18px;
+    }
+    .profile-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+}
+:root {
+    --admin-sidebar-width: 220px;
+    --admin-layout-gutter: 24px;
+}
+
+body.admin-sidebar-page {
+    padding-top: var(--admin-layout-gutter) !important;
+    padding-left: var(--admin-layout-gutter) !important;
+    padding-right: var(--admin-layout-gutter) !important;
+    background: #F7ECDE;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body.admin-sidebar-page.admin-sidebar-collapsed {
+    padding-left: var(--admin-layout-gutter) !important;
+}
+
+.admin-sidebar-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--admin-sidebar-width);
+    padding: 24px 16px 20px;
+    box-sizing: border-box;
+    background: #3C5099;
+    box-shadow: 14px 0 44px rgba(26, 39, 86, 0.34);
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.32) transparent;
+}
+
+.admin-sidebar-nav::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-sidebar-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.admin-sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+}
+
+.admin-sidebar-nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.42);
+}
+
+.admin-sidebar-nav::before,
+.admin-sidebar-nav::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.admin-sidebar-nav::before {
+    background: none;
+    opacity: 0;
+    animation: none;
+    will-change: auto;
+}
+
+.admin-sidebar-nav::after {
+    background: none;
+    animation: none;
+    will-change: auto;
+}
+
+.admin-sidebar-nav:hover::before {
+    transform: none;
+}
+
+.admin-sidebar-nav:hover::after {
+    transform: none;
+}
+
+@keyframes adminSidebarShimmer {
+    0% {
+        background-position: 0 0, 130% 0;
+    }
+    50% {
+        background-position: 0 0, 42% 0;
+    }
+    100% {
+        background-position: 0 0, -35% 0;
+    }
+}
+
+@keyframes adminStarDrift {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(1px, -1px, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+body.admin-sidebar-collapsed .admin-sidebar-nav {
+    transform: translateX(calc(-100% - 28px));
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ให้ทุกหน้าที่อยู่ภายใต้ sidebar เว้นพื้นที่แบบคงที่ */
+body.admin-sidebar-page > :not(.admin-sidebar-nav):not(.admin-sidebar-show-btn):not(script):not(.donor-preview-banner) {
+    margin-left: calc(var(--admin-sidebar-width) + var(--admin-layout-gutter)) !important;
+    margin-right: 0 !important;
+    width: calc(100vw - var(--admin-sidebar-width) - (var(--admin-layout-gutter) * 2)) !important;
+    max-width: calc(100vw - var(--admin-sidebar-width) - (var(--admin-layout-gutter) * 2)) !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body.admin-sidebar-page.admin-sidebar-collapsed > :not(.admin-sidebar-nav):not(.admin-sidebar-show-btn):not(script):not(.donor-preview-banner) {
+    margin-left: 0 !important;
+    width: calc(100vw - (var(--admin-layout-gutter) * 2)) !important;
+    max-width: calc(100vw - (var(--admin-layout-gutter) * 2)) !important;
+}
+
+.admin-sidebar-head-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.admin-sidebar-toggle,
+.admin-sidebar-show-btn,
+.admin-sidebar-notif {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(17, 10, 38, 0.15);
+}
+
+.admin-sidebar-toggle:hover,
+.admin-sidebar-show-btn:hover,
+.admin-sidebar-notif:hover {
+    background: rgba(255, 255, 255, 0.24);
+    color: #fff;
+}
+
+.admin-sidebar-notif {
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+}
+
+.admin-sidebar-notif:hover {
+    background: transparent;
+}
+
+.admin-sidebar-show-btn {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 1300;
+    background: #3C5099;
+    display: none;
+}
+
+.admin-brand-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 8px 12px;
+    border-radius: 0;
+    background: transparent;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 22px;
+    border: none;
+    backdrop-filter: none;
+}
+
+.admin-brand-logo {
+    width: 122px;
+    height: auto;
+}
+
+.admin-brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+}
+
+.admin-brand-text strong {
+    font-size: 1.18rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.admin-brand-text span {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.admin-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: rgba(248, 246, 255, 0.95);
+    font-family: 'Prompt', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.admin-nav-link:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    transform: translateX(3px);
+}
+
+.admin-nav-link.active {
+    background: linear-gradient(90deg, #ffffff, #f5f1ff);
+    color: #4b2f87;
+    box-shadow: 0 10px 26px rgba(22, 10, 52, 0.26);
+}
+
+.admin-nav-emoji {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.24rem;
+    flex: 0 0 30px;
+}
+
+.admin-nav-emoji iconify-icon {
+    width: 1.22em;
+    height: 1.22em;
+}
+
+.admin-nav-label {
+    flex: 1;
+}
+
+.admin-nav-badge {
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: #ff8468;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    box-shadow: 0 6px 12px rgba(255, 132, 104, 0.28);
+}
+
+.admin-sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 18px;
+}
+
+.admin-side-utility {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: 'Prompt', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+/* โปรไฟล์ */
+.admin-side-utility:not(.admin-side-logout) {
+    background: #F1CF54;
+    color: #1f2937;
+}
+
+.admin-side-utility:not(.admin-side-logout):hover {
+    background: #e5c24b;
+    color: #0f172a;
+    transform: translateY(-1px);
+}
+
+.admin-side-utility-soft {
+    background: rgba(255, 244, 214, 0.16);
+}
+
+/* ออกจากระบบ */
+.admin-side-logout {
+    background: #CC583F;
+    color: #fff;
+}
+
+.admin-side-logout:hover {
+    background: #b54d35;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 991px) {
+    body.admin-sidebar-page {
+        padding-left: 0 !important;
+        padding-top: 110px !important;
+        padding-right: 14px !important;
+    }
+
+    body.admin-sidebar-page.admin-sidebar-collapsed {
+        padding-left: 0 !important;
+    }
+
+    body.admin-sidebar-page > :not(.admin-sidebar-nav):not(.admin-sidebar-show-btn):not(script):not(.donor-preview-banner),
+    body.admin-sidebar-page.admin-sidebar-collapsed > :not(.admin-sidebar-nav):not(.admin-sidebar-show-btn):not(script):not(.donor-preview-banner) {
+        margin-left: 0 !important;
+        width: calc(100vw - 28px) !important;
+        max-width: calc(100vw - 28px) !important;
+    }
+
+    .admin-sidebar-nav {
+        width: 100%;
+        height: auto;
+        bottom: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 14px;
+        overflow-x: auto;
+    }
+
+    body.admin-sidebar-collapsed .admin-sidebar-nav {
+        transform: translateY(-120%);
+    }
+
+    .admin-brand-card {
+        min-width: 150px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .admin-nav-links {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .admin-nav-link {
+        min-width: max-content;
+    }
+
+    .admin-sidebar-footer {
+        margin-top: 0;
+        margin-left: auto;
+        flex-direction: row;
+        padding-top: 0;
+    }
+
+    .admin-sidebar-show-btn {
+        top: 14px;
+        left: 14px;
+    }
+}
+
+.donor-view-icon { font-size: 15px; }
+
+/* แถบแจ้งเตือนโหมดดูตัวอย่างผู้บริจาค */
+.donor-preview-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10001;
+    background: #597D57;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding: 10px 16px;
+    min-height: 46px;
+    box-sizing: border-box;
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.donor-preview-banner strong { font-weight: 800; }
+
+.donor-preview-exit {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 13px;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.donor-preview-exit:hover {
+    background: rgba(255,255,255,0.35);
+    color: #fff;
+}
+
+/* แถบโหมดดูตัวอย่างอยู่เหนือ navbar — เลื่อน navbar ลงมา + เพิ่ม padding เนื้อหา */
+body:has(.donor-preview-banner):not(.admin-sidebar-page) {
+    padding-top: calc(82px + 48px) !important;
+}
+
+body:has(.donor-preview-banner):not(.admin-sidebar-page) .navbar {
+    top: 48px;
+}
+
+/* badge จำนวนรออนุมัติในเมนู */
+.menu-badge {
+    background: #E74C3C;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-left: 3px;
+    vertical-align: middle;
+}

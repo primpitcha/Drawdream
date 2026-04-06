@@ -1,0 +1,239 @@
+/* welcome.css — หน้า welcome.php
+ * แอนิเมชัน: .welcome-card = cardPop (เข้าครั้งเดียว) | .welcome-logo = logoFloat (ลูป)
+ * | .confetti span = confettiFall + CSS variables (--x,--delay,--dur) | .shape-a/b = driftA/B
+ * Responsive + prefers-reduced-motion ด้านล่าง */
+/* ไฟล์นี้: css/welcome.css */
+/* หน้าที่: สไตล์หน้า Welcome สำหรับทั้ง Admin, Donor, Foundation */
+:root {
+    --bg-top: #f5ede0;
+    --bg-bottom: #ebe5dc;
+    --card-bg: #ffffff;
+    --text-main: #2d3a47;
+    --text-soft: #6d7684;
+    --button-main: #597D57;
+    --button-hover: #4a6849;
+    --shadow: 0 24px 45px rgba(22, 37, 66, 0.14);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Prompt', 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-main);
+    background: linear-gradient(145deg, var(--bg-top), var(--bg-bottom));
+    overflow: hidden;
+}
+
+.welcome-wrap {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.welcome-card {
+    position: relative;
+    z-index: 2;
+    width: min(760px, 100%);
+    background: var(--card-bg);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    padding: 42px 28px 36px;
+    animation: cardPop 0.85s cubic-bezier(.2, .8, .2, 1);
+}
+
+.welcome-logo {
+    margin-bottom: 12px;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.logo-img {
+    max-width: 280px;
+    height: auto;
+}
+
+.welcome-text {
+    margin: 0 0 4px;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #d97b5a;
+}
+
+.welcome-name {
+    margin: 0 0 12px;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+    line-height: 1.1;
+}
+
+.welcome-message {
+    margin: 0 0 24px;
+    color: var(--text-soft);
+    font-size: clamp(15px, 2.5vw, 18px);
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.welcome-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--button-main);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 14px 40px;
+    font-size: 18px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+    border: none;
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+}
+
+.welcome-btn:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.welcome-btn:active {
+    transform: translateY(1px);
+}
+
+.welcome-auto-redirect {
+    display: block;
+    margin-top: 18px;
+    color: #8b94a0;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.confetti {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.confetti span {
+    position: absolute;
+    top: -12%;
+    left: var(--x);
+    width: 14px;
+    height: 22px;
+    background: var(--clr);
+    opacity: 0.85;
+    border-radius: 3px;
+    transform: rotate(var(--rot));
+    animation: confettiFall var(--dur) linear infinite;
+    animation-delay: var(--delay);
+}
+
+.welcome-bg-shape {
+    position: fixed;
+    border-radius: 999px;
+    pointer-events: none;
+    filter: blur(2px);
+}
+
+.shape-a {
+    width: 340px;
+    height: 340px;
+    top: -90px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(211, 180, 140, 0.28), transparent 70%);
+    animation: driftA 8s ease-in-out infinite;
+}
+
+.shape-b {
+    width: 380px;
+    height: 380px;
+    bottom: -130px;
+    right: -120px;
+    background: radial-gradient(circle, rgba(89, 125, 87, 0.18), transparent 70%);
+    animation: driftB 9s ease-in-out infinite;
+}
+
+@keyframes cardPop {
+    0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(115vh) rotate(540deg);
+        opacity: 0;
+    }
+}
+
+@keyframes driftA {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(12px, 10px); }
+}
+
+@keyframes driftB {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-16px, -12px); }
+}
+
+@media (max-width: 640px) {
+    .welcome-card {
+        padding: 36px 22px 32px;
+        border-radius: 16px;
+    }
+
+    .welcome-btn {
+        width: 100%;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .logo-img {
+        max-width: 140px;
+    }
+
+    .welcome-text {
+        font-size: 22px;
+    }
+
+    .welcome-name {
+        font-size: 32px;
+    }
+
+    .welcome-message {
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

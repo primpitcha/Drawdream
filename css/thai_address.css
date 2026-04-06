@@ -1,0 +1,75 @@
+/* ฟิลด์เลือกที่อยู่ไทย — ใช้กับ login (สมัครมูลนิธิ) และ update_profile */
+
+.thai-address-block {
+    margin-bottom: 8px;
+}
+
+.thai-address-hint {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 12px;
+    line-height: 1.45;
+}
+
+.thai-address-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+}
+
+@media (max-width: 560px) {
+    .thai-address-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.thai-address-grid .form-group {
+    margin-bottom: 0;
+}
+
+select.thai-addr-select.form-input,
+select.form-input.thai-addr-select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+select.thai-addr-select:focus {
+    outline: none;
+    border-color: #597D57;
+    box-shadow: 0 0 0 3px rgba(89, 125, 87, 0.12);
+}
+
+/* หน้า login (auth) */
+.auth-container .thai-address-hint {
+    text-align: left;
+}
+
+.auth-container .thai-address-grid .form-label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.auth-container .thai-address-grid .form-label.required::after {
+    content: " *";
+    color: #E57373;
+}
+
+.thai-address-legacy-note {
+    font-size: 13px;
+    color: #7a5f00;
+    background: #fff9ed;
+    border-left: 4px solid #e8b84a;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin: 12px 0 18px;
+    line-height: 1.45;
+}

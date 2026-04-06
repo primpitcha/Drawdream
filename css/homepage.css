@@ -1,0 +1,525 @@
+.center-section {
+        text-align: center;
+        margin: 40px 0 0 0;
+        padding-left: 120px;
+}
+
+@media (max-width: 1200px) {
+    .center-section {
+        padding-left: 0;
+    }
+}
+/* =====================================================
+   home.css
+   ใช้กับ: homepage.php
+   ===================================================== */
+
+:root {
+    --danger-red: #e06a4a;
+    --stories-bg: #3f4f9a;
+    --yellow-bg: #f4c948;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+}
+
+/* =====  homepage.php ===== */
+.home-section.home-hero {
+    background: #fff;
+}
+    .home-section.home-hero {
+        position: relative;
+    }
+
+.portrait-wrapper {
+    position: relative;
+    width: 400px; /* ลดขนาดความกว้าง */
+    height: 400px; /* ลดขนาดความสูง */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-left: 5%; /* ลด margin ซ้าย */
+}
+.portrait-wrapper {
+    position: absolute;
+    left: -40px;
+    bottom: 0;
+    width: 700px;
+    height: 900px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+@media (max-width: 991.98px) {
+    .portrait-wrapper {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+}
+
+.home-hero .container .row {
+        min-height: 650px;
+        position: relative;
+}
+
+.portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+.center-section {
+    text-align: center;
+    margin: 40px 0 0 0;
+}
+
+.center-section h2 {
+    color: #2e7d32;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.center-section h3 {
+    color: #222;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+}
+
+.center-section p {
+    color: #222;
+    font-size: 1.15rem;
+    margin-bottom: 0.5em;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-hero {
+    background-color: #F5C842;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 50px;
+    padding: 0.65rem 2.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-hero:hover {
+    background-color: #e6b830;
+    transform: translateY(-2px);
+}
+
+.btn-hero:active { transform: translateY(0); }
+
+.highlight { color: var(--danger-red); }
+
+.donation-image {
+    width: 560px;
+    height: 560px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%;
+}
+
+.donation-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.donation-amounts {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    justify-content: center;
+}
+
+.amount-btn {
+    width: 160px;
+    padding: 16px 0;
+    border: 2px solid #d8cfc7;
+    background: #fff;
+    color: #222;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.amount-btn:hover {
+    border-color: var(--danger-red);
+    color: var(--danger-red);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+.amount-btn.active {
+    background: var(--danger-red);
+    color: #fff;
+    border-color: var(--danger-red);
+}
+
+.selected-amount {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding: 16px 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 520px;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#selectedAmountDisplay {
+    font-size: 20px;
+    font-weight: 800;
+    color: #222;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.clear-btn:hover { color: var(--danger-red); }
+
+.btn-donate {
+    width: 520px;
+    padding: 18px 28px;
+    background: var(--yellow-bg);
+    color: #222;
+    border-radius: var(--radius-md);
+    font-size: 20px;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(244, 201, 72, 0.25);
+    margin: 0 auto;
+    display: block;
+    border: none;
+}
+
+.btn-donate:hover { box-shadow: 0 8px 22px rgba(244, 201, 72, 0.35); }
+
+.btn-home {
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.rights-box {
+    background: #fcf5ea;
+
+/* =============================
+     Responsive สำหรับ Mobile
+     ============================= */
+@media (max-width: 600px) {
+    /* ส่วนกลางของหน้า */
+    .center-section {
+        padding-left: 0;
+        margin: 20px 0 0 0;
+    }
+    .center-section h2 {
+        font-size: 1.3rem;
+    }
+    .center-section h3 {
+        font-size: 1.1rem;
+    }
+    .center-section p {
+        font-size: 1rem;
+    }
+
+    /* ปรับขนาดรูปภาพและ container หลัก */
+    .portrait-wrapper {
+        width: 90vw;
+        height: 45vw;
+        min-width: 180px;
+        min-height: 180px;
+        max-width: 95vw;
+        max-height: 60vw;
+        left: 0;
+        margin: 0 auto 1rem auto;
+        position: static;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .donation-image {
+        width: 90vw;
+        height: 45vw;
+        min-width: 180px;
+        min-height: 180px;
+        max-width: 95vw;
+        max-height: 60vw;
+        margin-left: 0;
+    }
+
+    /* ปุ่มและกล่องจำนวนเงิน */
+    .donation-amounts {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    .amount-btn {
+        width: 90vw;
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+    .selected-amount, .btn-donate {
+        width: 90vw;
+        font-size: 1rem;
+        padding: 12px 10px;
+    }
+    .btn-donate {
+        margin: 0 auto 1rem auto;
+    }
+
+    /* ปุ่มทั่วไป */
+    .btn-hero, .btn-home {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    /* ปรับ layout ให้แนวตั้ง */
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: stretch;
+    }
+}
+    border: 2px solid #d9cbb0;
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.rights-content {
+    flex: 1 1 0;
+    min-width: 260px;
+}
+
+.rights-content h4 {
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #222;
+    font-size: 2rem;
+}
+
+.rights-content p {
+    margin-bottom: 28px;
+    color: #222;
+    font-size: 1.15rem;
+}
+
+.rights-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.rights-image { flex: 0 0 260px; }
+.rights-image img { max-width: 260px; width: 100%; height: auto; }
+
+.btn-radis { border-radius: 20px; }
+
+.home-section.stories {
+    background: var(--stories-bg);
+    color: #fff;
+}
+
+.home-section.stories h3 {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.story-text,
+.card-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+    .center-section h3 { font-size: 1.6rem; }
+
+    .rights-box {
+        padding: 24px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .rights-actions { justify-content: center; }
+    .rights-image { flex: 0 0 auto; }
+}
+
+/* ===== ย้ายจาก homepage.php <style> ===== */
+body { overflow-x: hidden; }
+
+.home-hero {
+    background: #fff;
+}
+
+.home-hero .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.home-hero .row {
+    min-height: 628px;
+}
+
+.home-hero .hero-image-col {
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 0;
+    padding-right: 56px;
+    overflow: hidden;
+}
+
+.home-hero .portrait-wrapper {
+    margin-left: 0 !important;
+}
+
+.home-hero .hero-text-col {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.home-contact-section {
+    background-color: #F3EFE7;
+    min-height: 441px;
+    display: flex;
+    align-items: center;
+}
+
+.home-about-yellow {
+    background-color: #f4c948;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 991.98px) {
+    .home-contact-section,
+    .home-about-yellow {
+        min-height: auto;
+    }
+}
+
+.home-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left:  calc(-0.5 * var(--bs-gutter-x));
+    gap: 0 !important;
+}
+
+.home-section .container {
+    background: transparent !important;
+    max-width: 1400px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.home-section .rights-box {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stories h3,
+.stories p {
+    color: #ffffff !important;
+}
+
+.stories .btn-home {
+    background-color: #e06a4a !important;
+    border-color: #e06a4a !important;
+    color: #ffffff !important;
+    border-radius: 999px;
+    padding: 10px 26px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stories .btn-home:hover {
+    background-color: #cf5a3a !important;
+    border-color: #cf5a3a !important;
+    color: #ffffff !important;
+}
+
+.home-section.stories {
+    min-height: auto !important;
+    padding-top: 52px !important;
+    padding-bottom: 20px !important;
+}
+
+.home-section.stories .container {
+    padding-bottom: 6px !important;
+}
+
+.footer-logo {
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.footer-address {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.social-link {
+    color: #ffffff;
+    font-size: 1.85rem;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.social-link:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
